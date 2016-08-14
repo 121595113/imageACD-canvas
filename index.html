@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+
+<body>
+    <canvas id="canvas" class="canvas" style="display:block;margin:0 auto;">
+        您的浏览器尚不支持canvas
+    </canvas>
+    <button class="play">播放</button>
+    <button class="stop">暂停</button>
+    <button class="pre">上一帧</button>
+    <button class="next">下一帧</button>
+    <input type="range" value="0" max="100" min="0" step="0.1" id="b">
+    <p id="a"></p>
+    <script type="text/javascript" src="./js/zepto.min.js"></script>
+    <script type="text/javascript" src="./src/imageACD_canvas.js"></script>
+    <script type="text/javascript">
+    var aa=$('.canvas').CanvasVideo({
+        data: [
+            './images/img-lg.jpg',
+            './images/lv2.png',
+            './images/lv3.png',
+            './images/lv4.png',
+            './images/lv5.png',
+            './images/lv6.png',
+            './images/lv7.png'
+        ]
+    });
+    $('.next').click(function(){
+    	aa.next();
+    });
+    $('.pre').click(function(){
+    	aa.pre();
+    })
+    </script>
+</body>
+
+</html>
